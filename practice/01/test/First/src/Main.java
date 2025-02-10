@@ -1,7 +1,7 @@
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
 //        System.out.println("My first program");
 //
 //        int b = 5;
@@ -100,10 +100,84 @@ public class Main {
 //        System.out.println(String.valueOf(n).length());
 //
 //        System.out.println(-3 + Math.random() * 6);
-
-        int a = 10;
-        int b = 15;
-
-        System.out.println(a + (int) (Math.random() * (b - a + 1)));
-    }
-}
+//
+//        int a = 10;
+//        int b = 15;
+//
+//        System.out.println(a + (int) (Math.random() * (b - a + 1)));
+//
+//        int size = 50;
+//        int[] numbers = new int[size];
+//
+//        for (int i = 0, num = 1; i < size; i++, num += 2) {
+//            numbers[i] = num;
+//        }
+//
+//        System.out.println("Массив в прямом порядке:");
+//
+//        for (int num : numbers) {
+//            System.out.print(num + " ");
+//        }
+//
+//        System.out.println();
+//
+//        for (int i = size - 1; i >= 0; i--) {
+//            System.out.print(numbers[i] + " ");
+//        }
+//
+//        int[] numbers = new int[15];
+//        int evenCount = 0;
+//
+//
+//        for (int i = 0; i < numbers.length; i++) {
+//            numbers[i] = (int) (Math.random() * 10);
+//            if (numbers[i] % 2 == 0) {
+//                evenCount++;
+//            }
+//        }
+//
+//
+//        System.out.println("Сгенерированный массив:");
+//        for (int num : numbers) {
+//            System.out.print(num + " ");
+//        }
+//        System.out.println();
+//        System.out.println("Количество четных элементов в массиве: " + evenCount);
+//
+//        int rows = 7;
+//        int cols = 4;
+//        int[][] matrix = new int[rows][cols];
+//
+//        for (int i = 0; i < rows; i++) {
+//            for (int j = 0; j < cols; j++) {
+//                matrix[i][j] = (int) (Math.random() * 11) - 5;
+//            }
+//        }
+//
+//        System.out.println("Сгенерированный массив:");
+//
+//        for (int[] row : matrix) {
+//            for (int num : row) {
+//                System.out.printf("%3d ", num);
+//            }
+//            System.out.println();
+//        }
+//
+//        int maxProductRowIndex = 0;
+//        long maxProduct = 1;
+//
+//        for (int i = 0; i < rows; i++) {
+//            long product = 1;
+//            for (int j = 0; j < cols; j++) {
+//                product += matrix[i][j];
+//            }
+//            if (i == 0 || Math.abs(product) > Math.abs(maxProduct)) {
+//                maxProduct = product;
+//                maxProductRowIndex = i;
+//            }
+//        }
+//
+//        System.out.println("Индекс строки с наибольшим по модулю произведением элементов: " + maxProductRowIndex);
+//
+//    }
+//}
