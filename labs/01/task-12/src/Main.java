@@ -13,31 +13,34 @@ public class Main {
         int count = 0;
 
         while (count < 15) {
-            int a = 2 + (int) (Math.random() * 8); // Число от 2 до 9
-            int b = 2 + (int) (Math.random() * 8); // Число от 2 до 9
+            int a = 2 + (int) (Math.random() * 8);
+            int b = 2 + (int) (Math.random() * 8);
 
-            int min = Math.min(a, b);
-            int max = Math.max(a, b);
-            boolean exists = false;
+            if (a > b) {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
 
+            boolean isExists = false;
             for (int i = 0; i < count; i++) {
-                if (examples[i][0] == min && examples[i][1] == max) {
-                    exists = true;
+                if (examples[i][0] == a && examples[i][1] == b) {
+                    isExists = true;
                     break;
                 }
             }
 
-            if (!exists) {
-                examples[count][0] = min;
-                examples[count][1] = max;
+            if (!isExists) {
+                examples[count][0] = a;
+                examples[count][1] = b;
                 count++;
             }
         }
 
         System.out.println("15 случайных примеров из таблицы умножения:");
-
         for (int i = 0; i < 15; i++) {
             System.out.println(examples[i][0] + " × " + examples[i][1]);
         }
     }
 }
+

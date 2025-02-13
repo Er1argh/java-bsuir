@@ -14,7 +14,6 @@ public class Main {
         for (int ticket = 0; ticket <= 999999; ticket++) {
             int firstHalf = ticket / 1000;
             int secondHalf = ticket % 1000;
-
             if (sumOfDigits(firstHalf) == sumOfDigits(secondHalf)) {
                 count++;
             }

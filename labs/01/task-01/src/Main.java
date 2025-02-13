@@ -5,17 +5,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        double n = 0;
         Scanner scanner = new Scanner(System.in);
+        double n = 0;
 
         while (true) {
             System.out.println("Введите число n: ");
-
             if (scanner.hasNextDouble()) {
                 n = scanner.nextDouble();
                 break;
             } else {
-                System.out.println("Ошибка: введенное значение не является числом!");
+                System.out.println("Ошибка! Введенное значение не является числом!");
                 scanner.next();
             }
         }

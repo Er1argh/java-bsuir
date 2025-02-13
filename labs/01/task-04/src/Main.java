@@ -11,16 +11,14 @@ public class Main {
         int secretNumber = (int) (Math.random() * 10) + 1;
         int guess;
 
-        System.out.println("Я загадал число от 1 до 10. Попробуйте угадать!");
+        System.out.println("Загадано число от 1 до 10. Попробуйте угадать!");
 
         while (true) {
             System.out.print("Введите ваш вариант: ");
-
             if (scanner.hasNextInt()) {
                 guess = scanner.nextInt();
-
                 if (guess < 1 || guess > 10) {
-                    System.out.println("Число должно быть от 1 до 10. Попробуйте снова.");
+                    System.out.println("Число должно быть от 1 до 10. Попробуйте снова!");
                 } else if (guess < secretNumber) {
                     System.out.println("Загаданное число больше.");
                 } else if (guess > secretNumber) {

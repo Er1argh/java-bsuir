@@ -3,8 +3,8 @@
 
 public class Main {
     public static void main(String[] args) {
-        for (int number = 1000; number <= 10000; number += 3) {
-            System.out.print(number + " ");
+        for (int num = 1000; num <= 10000; num += 3) {
+            System.out.print(num + " ");
         }
     }
 }
