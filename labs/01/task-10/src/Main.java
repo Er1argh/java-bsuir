@@ -5,6 +5,7 @@
 public class Main {
     public static void main(String[] args) {
         int[] array = new int[12];
+
         int max = Integer.MIN_VALUE;
         int lastIndex = -1;
 

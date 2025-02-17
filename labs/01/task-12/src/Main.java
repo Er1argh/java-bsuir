@@ -13,26 +13,26 @@ public class Main {
         int count = 0;
 
         while (count < 15) {
-            int a = 2 + (int) (Math.random() * 8);
-            int b = 2 + (int) (Math.random() * 8);
+            int first = 2 + (int) (Math.random() * 8);
+            int second = 2 + (int) (Math.random() * 8);
 
-            if (a > b) {
-                int temp = a;
-                a = b;
-                b = temp;
+            if (first > second) {
+                int temp = first;
+                first = second;
+                second = temp;
             }
 
             boolean isExists = false;
             for (int i = 0; i < count; i++) {
-                if (examples[i][0] == a && examples[i][1] == b) {
+                if (examples[i][0] == first && examples[i][1] == second) {
                     isExists = true;
                     break;
                 }
             }
 
             if (!isExists) {
-                examples[count][0] = a;
-                examples[count][1] = b;
+                examples[count][0] = first;
+                examples[count][1] = second;
                 count++;
             }
         }

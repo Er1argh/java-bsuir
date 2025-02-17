@@ -45,7 +45,6 @@ public class Main {
         return array;
     }
 
-    // Функция извлечения чётных чисел из массива
     private static int[] extractEvenNumbers(int[] array) {
         int count = 0;
         for (int num : array) {

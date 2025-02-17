@@ -14,13 +14,13 @@ public class Main {
                 n = scanner.nextDouble();
                 break;
             } else {
-                System.out.println("Ошибка! Введенное значение не является числом!");
+                System.out.println("Ошибка! Введенное значение не является числом.");
                 scanner.next();
             }
         }
 
         for (int i = 0; i < 4; i++) {
-            System.out.println(n + " в степени " + i + " равно " + Math.pow(n, i));
+            System.out.println(n + " в степени " + i + ": " + Math.pow(n, i));
         }
 
         scanner.close();

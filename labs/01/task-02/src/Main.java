@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         final int CORRECT_PASSWORD = 1234;
+
         Scanner scanner = new Scanner(System.in);
         int enteredPassword;
 
@@ -14,13 +15,13 @@ public class Main {
             if (scanner.hasNextInt()) {
                 enteredPassword = scanner.nextInt();
                 if (enteredPassword == CORRECT_PASSWORD) {
-                    System.out.println("Пароль верный. Доступ разрешён!");
+                    System.out.println("Пароль верный! Доступ разрешён.");
                     break;
                 } else {
-                    System.out.println("Неверный пароль. Попробуйте ещё раз!");
+                    System.out.println("Неверный пароль! Попробуйте ещё раз.");
                 }
             } else {
-                System.out.println("Ошибка! Введите четырёхзначное число.");
+                System.out.println("Ошибка! Введите целое четырёхзначное число.");
                 scanner.next();
             }
         }

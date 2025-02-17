@@ -16,7 +16,7 @@
 
 public class Main {
     public static void main(String[] args) {
-        int n = (int) (Math.random() * 28800) + 1;
+        int n = (int) (Math.random() * 28800 + 1);
         int hoursLeft = n / 3600;
 
         System.out.println("На табло: " + n + " секунд");

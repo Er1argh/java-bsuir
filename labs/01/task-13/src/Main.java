@@ -27,11 +27,15 @@ public class Main {
 
             for (int j = 1; j < m; j++) {
                 if (matrix[i][j] < matrix[i][minIndex]) minIndex = j;
+            }
+
+            if (minIndex != m - 1) swap(matrix[i], m - 1, minIndex); // if not last
+
+            for (int j = 1; j < m; j++) {
                 if (matrix[i][j] > matrix[i][maxIndex]) maxIndex = j;
             }
 
-            if (minIndex != m - 1) swap(matrix[i], m - 1, minIndex);
-            if (maxIndex != 0) swap(matrix[i], 0, maxIndex);
+            if (maxIndex != 0) swap(matrix[i], 0, maxIndex); // if not first
         }
 
         System.out.println("Преобразованная матрица:");
