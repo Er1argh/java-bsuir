@@ -37,6 +37,8 @@ public class Main {
             }
         }
 
+
+
         System.out.println("15 случайных примеров из таблицы умножения:");
         for (int i = 0; i < 15; i++) {
             System.out.println(examples[i][0] + " × " + examples[i][1]);
