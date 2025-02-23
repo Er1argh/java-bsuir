@@ -72,6 +72,30 @@ public class Main {
         // Вывод всех чисел из строк
         System.out.println("\nAll numbers in array:");
         printAllNumbers(arr);
+
+        /* Удаление из строки части, заключенной между двумя символами,
+         * которые вводятся (например, между скобками или между звездочками и т.п.) */
+        System.out.println("\nRemoving text between '(' and ')' in string: " + removeBetween("Example (to remove) text", '(', ')'));
+
+        // Определение количества одинаковых строк в массиве
+        System.out.println("\nCount of duplicate strings: " + countDuplicateStrings(arr));
+
+        /* Определение количества одинаковых слов (выводить слово и количество
+         * повторений) */
+        System.out.println("\nWord frequencies:");
+        countWordOccurrences(arr);
+
+        // Объединение в одну строку подстрок с i по j
+        System.out.println("\nJoining substrings from index 1 to 3: " + joinSubstrings(arr, 1, 3));
+
+        /* Преобразование i-ой строки так, чтобы все слова начинались с заглавной
+         * буквы */
+        System.out.println("\nCapitalizing words in first string: " + capitalizeWords(arr[0]));
+
+        /* Внесение изменения в i-ую строку (предается номер строки и новое
+         * содержание) */
+        updateString(arr, 0, "Updated first string!");
+        System.out.println("\nUpdated first string: " + arr[0]);
     }
 
     // Сортировка строк массива по количеству слов в строке
@@ -170,6 +194,89 @@ public class Main {
                     System.out.println(num);
                 }
             }
+        }
+    }
+
+    /* Удаление из строки части, заключенной между двумя символами,
+     * которые вводятся (например, между скобками или между звездочками и т.п.) */
+    private static String removeBetween(String str, char start, char end) {
+        return str.replaceAll("\\" + start + ".*?\\" + end, ""); // .*? — любое количество символов между start и end
+    }
+
+    // Определение количества одинаковых строк в массиве
+    private static int countDuplicateStrings(String[] arr) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i].equals(arr[j])) {
+                    count++;
+                    break;
+                }
+            }
+        }
+        return count;
+    }
+
+    /* Определение количества одинаковых слов (выводить слово и количество
+     * повторений) */
+    private static void countWordOccurrences(String[] arr) {
+        String[] words = new String[100];
+        int[] counts = new int[100];
+        int size = 0;
+
+        for (String str : arr) {
+            String[] splitWords = str.split("[ ,.]+");
+            for (String word : splitWords) {
+                if (!word.isEmpty()) {
+                    boolean found = false;
+                    for (int i = 0; i < size; i++) {
+                        if (words[i].equals(word)) {
+                            counts[i]++;
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        words[size] = word;
+                        counts[size] = 1;
+                        size++;
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < size; i++) {
+            System.out.println(words[i] + ": " + counts[i]);
+        }
+    }
+
+    // Объединение в одну строку подстрок с i по j
+    private static String joinSubstrings(String[] arr, int i, int j) {
+        String result = "";
+        for (int k = i; k <= j && k < arr.length; k++) {
+            result += arr[k] + " ";
+        }
+        return result.trim();
+    }
+
+    /* Преобразование i-ой строки так, чтобы все слова начинались с заглавной
+     * буквы */
+    private static String capitalizeWords(String str) {
+        String[] words = str.split(" ");
+        String result = "";
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                result += Character.toUpperCase(word.charAt(0)) + word.substring(1) + " ";
+            }
+        }
+        return result.trim();
+    }
+
+    /* Внесение изменения в i-ую строку (предается номер строки и новое
+     * содержание) */
+    private static void updateString(String[] arr, int index, String newValue) {
+        if (index >= 0 && index < arr.length) {
+            arr[index] = newValue;
         }
     }
 }
