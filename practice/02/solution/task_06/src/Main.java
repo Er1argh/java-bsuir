@@ -1,9 +1,13 @@
+/*
+ * Необходимо создать в классе Student конструктор без параметров,
+ * задающий начальные значения для студента.
+ */
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         Student ivanov = new Student();
         Student petrov = new Student();
 
@@ -44,6 +48,6 @@ public class Main {
             grades[i] = getPositiveInt(scanner, "Введите оценку: ", 10);
         }
 
-        System.out.println("Средняя оценка: " + student.calculateAverageGrade(scanner, grades));
+        System.out.println("Средняя оценка: " + student.calculateAverageGrade(grades));
     }
 }

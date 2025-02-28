@@ -22,9 +22,11 @@ public class Main {
 
     private static int sumParameters(int... numbers) {
         int sum = 0;
+
         for (int num : numbers) {
             sum += num;
         }
+
         return sum;
     }
 
@@ -32,15 +34,19 @@ public class Main {
         if (numbers.length == 0) {
             return 0;
         }
+
         int product = 1;
+
         for (int num : numbers) {
             product *= num;
         }
+
         return product;
     }
 
     private static int[] sortParameters(int... numbers) {
         Arrays.sort(numbers);
+
         return numbers;
     }
 }

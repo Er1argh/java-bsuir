@@ -1,14 +1,19 @@
+/*
+ * Необходимо создать в классе Student метод вычисляющий средний бал по
+ * переданному в метод массиву оценок.
+ */
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         Student ivanov = new Student();
+        Student petrov = new Student();
+
         ivanov.numberCourse = 1;
         ivanov.nameStudent = "Ivan";
 
-        Student petrov = new Student();
         petrov.numberCourse = 2;
         petrov.nameStudent = "Petya";
 

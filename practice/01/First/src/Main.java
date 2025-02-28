@@ -1,80 +1,77 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        /* 03:
-         * С помощью цикла while и оператора if необходимо определить четность
-         * чисел и вывести их (числа от 1 до 10). 1 – нечетное, 2 – четное и т.д. */
+        // 01
+        int[] oddNumbers = new int[50];
 
-        int number = 1;
-
-        while (number <= 10) {
-            System.out.println(number + ((number % 2 == 0) ? " - четное" : " - нечетное"));
-            number++;
+        for (int i = 0, oddNumber = 1; i < 50; i++, oddNumber += 2) {
+            oddNumbers[i] = oddNumber;
         }
 
-        /* 04:
-         * С помощью цикла do-while необходимо вывести на экран первые 10
-         * элементов последовательности 2 4 8 16 32 64 128 …. */
+        for (int oddNumber : oddNumbers) {
+            System.out.print(oddNumber + " ");
+        }
 
-        int sequenceMember = 2;
-        int sequenceCounter = 0;
-
-        do {
-            System.out.print(sequenceMember + " ");
-            sequenceMember *= 2;
-            sequenceCounter++;
-        } while (sequenceCounter < 10);
-
-        // Новая строка для следующего задания
         System.out.println();
 
-        /* 05:
-         * С помощью цикла for необходимо подсчитать сумму всех четных чисел в
-         * диапазоне от –20 до 20. */
+        for (int i = oddNumbers.length - 1; i >= 0; i--) {
+            System.out.print(oddNumbers[i] + " ");
+        }
 
-        int sum = 0;
+        System.out.println();
 
-        for (int i = -20; i <= 20; i++) {
-            if (i % 2 == 0) {
-                sum += i;
+        // 02
+        int[] array = new int[15];
+        int evenCount = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 10);
+
+            if (array[i] % 2 == 0) {
+                evenCount++;
             }
         }
 
-        System.out.println(sum);
-
-        /* 06:
-         * С помощью оператора switch необходимо написать программу, которая по
-         * номеру месяца будет определять пору года. Номер месяца вводится с
-         * клавиатуры. Нужно предусмотреть проверку на некорректный ввод. */
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Введите номер месяца (1-12): ");
-
-        if (scanner.hasNextInt()) {
-            int mounth = scanner.nextInt();
-
-            switch (mounth) {
-                case 12, 1, 2:
-                    System.out.println("Зима");
-                    break;
-                case 3, 4, 5:
-                    System.out.println("Весна");
-                    break;
-                case 6, 7, 8:
-                    System.out.println("Лето");
-                    break;
-                case 9, 10, 11:
-                    System.out.println("Осень");
-                    break;
-                default:
-                    System.out.println("Ошибка: введите число от 1 до 12.");
-            }
-        } else {
-            System.out.println("Ошибка: введите целое число.");
+        for (int num : array) {
+            System.out.print(num + " ");
         }
 
-        scanner.close();
+        System.out.println("\n" + evenCount);
+
+        // 03
+        int rows = 7;
+        int cols = 4;
+        int[][] matrix = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = (int) (Math.random() * 11) - 5;
+            }
+        }
+
+        for (int[] row : matrix) {
+            for (int num : row) {
+                System.out.printf("%3d", num);
+            }
+
+            System.out.println();
+        }
+
+        int maxProductRowIndex = 0;
+        long maxProduct = 1;
+
+        for (int i = 0; i < rows; i++) {
+            int product = 1;
+
+            for (int j = 0; j < cols; j++) {
+                product *= matrix[i][j];
+            }
+
+            if (i == 0 || Math.abs(product) > Math.abs(maxProduct)) {
+                maxProduct = product;
+                maxProductRowIndex = i;
+            }
+        }
+
+        System.out.println(maxProductRowIndex);
     }
 }

@@ -6,6 +6,7 @@ public class Person {
 
     public Person(String data) {
         String[] parts = data.split("; ");
+
         if (parts.length == 4) {
             this.name = parts[0];
             this.age = Integer.parseInt(parts[1]);
@@ -18,9 +19,11 @@ public class Person {
 
     public boolean compare(String data) {
         String[] parts = data.split("; ");
+
         if (parts.length != 4) {
             throw new IllegalArgumentException("Неверный формат данных");
         }
+
         return this.name.equals(parts[0]) &&
                 this.age == Integer.parseInt(parts[1]) &&
                 this.weight == Integer.parseInt(parts[2]) &&

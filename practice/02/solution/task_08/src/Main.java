@@ -1,9 +1,13 @@
+/*
+ * Необходимо изменить в классе Student конструктор с параметрами (имена
+ * параметров и полей совпадают) используя ключевое слово this.
+ */
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         Student ivanov = new Student(1, "Ivan");
         Student petrov = new Student(2, "Petya");
 
@@ -44,6 +48,6 @@ public class Main {
             grades[i] = getPositiveInt(scanner, "Введите оценку: ", 10);
         }
 
-        System.out.println("Средняя оценка: " + student.calculateAverageGrade(scanner, grades));
+        System.out.println("Средняя оценка: " + student.calculateAverageGrade(grades));
     }
 }

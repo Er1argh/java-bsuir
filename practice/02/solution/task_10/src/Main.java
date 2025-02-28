@@ -1,9 +1,12 @@
+/*
+ * Необходимо написать перегруженные конструкторы в классе Student.
+ */
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         Student ivanov = new Student(1, "Ivan");
         Student petrov = new Student();
 

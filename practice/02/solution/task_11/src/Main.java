@@ -1,9 +1,13 @@
+/*
+ * Необходимо добавить в класс Student конструктор создающий копию
+ * объекта.
+ */
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         Student ivanov = new Student(1, "Ivan");
         Student petrov = new Student(ivanov);
 

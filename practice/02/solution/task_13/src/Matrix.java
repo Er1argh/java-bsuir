@@ -20,6 +20,7 @@ public class Matrix {
 
     public void fillRandom(int min, int max) {
         Random random = new Random();
+
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 data[i][j] = random.nextInt(max - min + 1) + min;
@@ -37,12 +38,15 @@ public class Matrix {
         if (this.rows != other.rows || this.cols != other.cols) {
             throw new IllegalArgumentException("Размеры матриц должны совпадать");
         }
+
         Matrix result = new Matrix(rows, cols);
+
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 result.data[i][j] = this.data[i][j] + other.data[i][j];
             }
         }
+
         return result;
     }
 
@@ -50,12 +54,15 @@ public class Matrix {
         if (this.rows != other.rows || this.cols != other.cols) {
             throw new IllegalArgumentException("Размеры матриц должны совпадать");
         }
+
         Matrix result = new Matrix(rows, cols);
+
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 result.data[i][j] = this.data[i][j] - other.data[i][j];
             }
         }
+
         return result;
     }
 
@@ -63,7 +70,9 @@ public class Matrix {
         if (this.cols != other.rows) {
             throw new IllegalArgumentException("Число столбцов первой матрицы должно быть равно числу строк второй");
         }
+
         Matrix result = new Matrix(this.rows, other.cols);
+
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < other.cols; j++) {
                 for (int k = 0; k < this.cols; k++) {
@@ -71,6 +80,7 @@ public class Matrix {
                 }
             }
         }
+
         return result;
     }
 }

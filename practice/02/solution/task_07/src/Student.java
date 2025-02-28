@@ -13,7 +13,7 @@ public class Student {
         System.out.println("numberCourse = " + numberCourse + ", nameStudent = " + nameStudent);
     }
 
-    public double calculateAverageGrade(Scanner scanner, int[] grades) {
+    public double calculateAverageGrade(int[] grades) {
         int gradesSum = 0;
 
         for (int i = 0; i < grades.length; i++) {

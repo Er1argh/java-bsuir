@@ -36,6 +36,7 @@ public class Student {
 
         for (int i = 0; i < gradesNumber; i++) {
             int grade = getPositiveInt(scanner, "Введите оценку: ", 10);
+
             grades[i] = grade;
             gradesSum += grades[i];
         }
