@@ -19,6 +19,6 @@ public class Drum implements Instrument {
 
     @Override
     public void play() {
-        System.out.println("Играет барабан размером " + size + " см в тональности " + KEY);
+        System.out.println("Играет барабан размером " + size);
     }
 }
